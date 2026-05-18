@@ -5,13 +5,11 @@
     "from": "2024-01-01",
     "to": "2024-01-31"
   },
-  "templateSource": "Internal_BCC PowerPoint Template 2026.pptx",
   "features": [
-    "No logo",
-    "BCC dark blue cable template style",
-    "Machine reset button",
-    "Year buttons 2024/2025/2026",
-    "Excel/CSV import",
-    "Larger text"
+    "KV New Slogan LinkedIn topbar background",
+    "Dark blue bars for Machine Group/Bottom/Top Scrap",
+    "Reset Machines clears all selection",
+    "All Groups grouped by first 3 characters of Machine",
+    "Excel/CSV import"
   ]
 }
