@@ -1,12 +1,10 @@
-# OEE Performance Dashboard - Bangkok Cable Template Update
+# OEE Performance Dashboard - KV Background / Dark Blue Charts / Group 3 Digits
 
 ## ปรับปรุงตามคำขอ
-- เพิ่มปุ่ม Reset Machines สำหรับรีเซ็ตการเลือกเครื่องจักร
-- เพิ่มปุ่มแสดงผลปี 2024, 2025, 2026
-- ลบ Logo ออกจาก Dashboard และ Login
-- ปรับสไตล์เป็น Bangkok Cable Template ตาม `Internal_BCC PowerPoint Template 2026.pptx` โดยใช้โทน Dark Blue / Neon Cable / Red Accent
-- ลบข้อความ `Bangkok Cable CI Tone`
-- ปรับข้อความและ UI ให้ใหญ่ขึ้น
+- ปรับสีกราฟแท่ง `Machine Group OEE`, `Bottom Machines by OEE`, `Top Scrap by Machine Group` เป็นสีน้ำเงินเข้ม
+- เมนูบนสุดใช้ภาพพื้นหลัง `KV New Slogan LinkedIn.jpg`
+- ปุ่ม `Reset Machines` เปลี่ยนเป็นลบ Select เครื่องจักรทั้งหมด
+- `All Groups` แสดงกลุ่มจาก Machine 3 หลักแรก เช่น ABC จาก Machine ABC001
 - รองรับ Import `.csv`, `.xlsx`, `.xls`
 
 ## Login
@@ -19,6 +17,3 @@
 - Deploy command: เว้นว่าง
 - Build output directory: `/`
 - Root directory: `/`
-
-## หมายเหตุ Excel Import
-Excel import ใช้ SheetJS CDN หาก network block CDN ให้ใช้ CSV หรือเพิ่ม SheetJS local ได้
