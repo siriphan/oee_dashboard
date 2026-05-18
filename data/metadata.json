@@ -1,0 +1,15 @@
+{
+  "rows": 17006,
+  "dateRange": {
+    "from": "2024-01-01",
+    "to": "2024-01-31"
+  },
+  "fix": "KV background is rendered as an absolute IMG element assets/kv.jpg with cache-busting to avoid CSS/path/cache issues",
+  "features": [
+    "KV topbar background fixed",
+    "OEE Trend values above bars",
+    "Dark blue target bars",
+    "Machine group first 3 chars",
+    "Reset Machines clears all selections"
+  ]
+}
