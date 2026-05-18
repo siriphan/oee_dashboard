@@ -6,7 +6,8 @@
     "to": "2024-01-31"
   },
   "features": [
-    "KV New Slogan LinkedIn topbar background",
+    "Top menu background changed to KV New Slogan LinkedIn.jpg",
+    "OEE Trend chart shows numeric values above bars",
     "Dark blue bars for Machine Group/Bottom/Top Scrap",
     "Reset Machines clears all selection",
     "All Groups grouped by first 3 characters of Machine",
