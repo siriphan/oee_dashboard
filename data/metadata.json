@@ -5,13 +5,13 @@
     "from": "2024-01-01",
     "to": "2024-01-31"
   },
+  "templateSource": "Internal_BCC PowerPoint Template 2026.pptx",
   "features": [
-    "Excel XLSX/XLS import using SheetJS CDN",
-    "CSV monthly import replace/append",
-    "Login User=BCC Password=BCC@2026",
-    "Machine checkbox multi-select",
-    "BCC logo top-left",
-    "KV New Slogan LinkedIn as top taskbar background",
-    "TH Sarabun New font styling"
+    "No logo",
+    "BCC dark blue cable template style",
+    "Machine reset button",
+    "Year buttons 2024/2025/2026",
+    "Excel/CSV import",
+    "Larger text"
   ]
 }
