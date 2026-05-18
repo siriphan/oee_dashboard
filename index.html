@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executive OEE Performance Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+      <div class="login-logo">BCC</div>
+      <h2>Executive OEE Dashboard Login</h2>
+      <p>เข้าสู่ระบบเพื่อใช้งาน Dashboard</p>
+      <label>User</label>
+      <input id="loginUser" placeholder="User" autocomplete="username" />
+      <label>Password</label>
+      <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password" />
+      <button id="loginBtn" class="btn blue login-btn">Login</button>
+      <div id="loginMsg" class="login-msg"></div>
+      <div class="login-hint">Default: User = BCC / Pass = BCC@2026</div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>Executive OEE Performance Dashboard</h1>
+      <p id="statusText">Ready - Monthly CSV import, Login and Machine checkbox enabled</p>
+      <span class="theme-pill">Bangkok Cable Theme | Blue · Red · White</span>
+    </div>
+    <div class="hero-right">
+      <div class="created-pill">Created By Siriphan Meesombut&nbsp; ID4.0 Teams</div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar panel">
+      <select id="groupFilter"><option value="">All Groups</option></select>
+      <div class="machine-picker">
+        <button id="machinePickerBtn" class="picker-btn" type="button">All Machines ▾</button>
+        <div id="machinePanel" class="machine-panel">
+          <label class="machine-actions"><input type="checkbox" id="machineAllCheck" checked /> Select All Machines</label>
+          <div id="machineChecklist" class="machine-list"></div>
+        </div>
+      </div>
+      <select id="shiftFilter"><option value="">All Shifts</option></select>
+      <select id="locationFilter"><option value="">All Locations</option></select>
+      <select id="operationFilter"><option value="">All Operations</option></select>
+      <input id="fileInput" type="file" accept=".csv,.txt" multiple />
+      <select id="importMode"><option value="replace">Replace Data</option><option value="append">Append Data</option></select>
+      <button id="importBtn" class="btn blue">Import Files</button>
+      <button id="saveBtn" class="btn green">Save DB</button>
+      <button id="clearBtn" class="btn red">Clear DB</button>
+    </section>
+
+    <section class="datebar panel">
+      <label>From <input id="fromDate" type="date" /></label>
+      <label>To <input id="toDate" type="date" /></label>
+      <label>Trend <select id="trendFilter"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></label>
+      <button id="resetDate" class="btn blue wide">Reset Date Range</button>
+      <span class="tone-pill">Bangkok Cable CI Tone</span>
+    </section>
+
+    <div id="fileNote" class="small-note">Loading bundled January 2024 data…</div>
+
+    <section class="kpis">
+      <article class="card"><span>OEE</span><strong id="kpiOEE">-</strong></article>
+      <article class="card"><span>Availability</span><strong id="kpiAvail">-</strong></article>
+      <article class="card"><span>Performance</span><strong id="kpiPerf">-</strong></article>
+      <article class="card"><span>Quality</span><strong id="kpiQual">-</strong></article>
+      <article class="card"><span>Output (Tons)</span><strong id="kpiOutput">-</strong></article>
+      <article class="card"><span>Downtime</span><strong id="kpiDown">-</strong></article>
+    </section>
+
+    <section class="grid2">
+      <article class="panel chart-panel"><div class="panel-title">Daily OEE Trend <span id="trendBadge">Daily</span></div><canvas id="trendChart"></canvas></article>
+      <article class="panel chart-panel"><div class="panel-title">OEE Components</div><canvas id="componentChart"></canvas></article>
+    </section>
+    <section class="grid2">
+      <article class="panel chart-panel"><div class="panel-title">Machine Group OEE</div><canvas id="groupChart"></canvas></article>
+      <article class="panel chart-panel"><div class="panel-title">Bottom Machines by OEE</div><canvas id="bottomChart"></canvas></article>
+    </section>
+    <section class="panel chart-panel"><div class="panel-title">Top Scrap by Machine Group</div><canvas id="scrapChart"></canvas></section>
+
+    <section class="panel table-panel">
+      <div class="panel-title">Production Detail</div>
+      <div class="table-tools"><input id="searchBox" placeholder="Search machine/material/operation…" /></div>
+      <div class="table-wrap"><table id="detailTable"><thead></thead><tbody></tbody></table></div>
+    </section>
+
+    <section class="panel footnote">
+      <p><b>OEE Formula:</b> Run Time = Total Confirm Time - Machine Down Time; Availability = Run Time / Total Confirm Time; Performance = MIN(Production Time / Run Time, 1); Quality = Output / (Output + Scrap/1000); OEE = Availability × Performance × Quality</p>
+      <p><b>Cloudflare Fix:</b> Static Pages version. Do not use <code>npx wrangler deploy</code>. Build command and Deploy command must be blank.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
