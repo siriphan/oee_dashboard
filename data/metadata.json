@@ -1,0 +1,33 @@
+{
+  "sourceFile": "01_2024.XLSX",
+  "csvFile": "data/01_2024.csv",
+  "rows": 17006,
+  "columns": [
+    "Posting Date",
+    "Plan Work Center",
+    "Material",
+    "Shift",
+    "Activity",
+    "Machine",
+    "Operation short text",
+    "Actual Capacity",
+    "Production Time",
+    "Total Scrap Quantity",
+    "Output (Tons)",
+    "Labor Time",
+    "Total Confirm Time",
+    "Machine Down Time",
+    "Location"
+  ],
+  "dateRange": {
+    "from": "2024-01-01",
+    "to": "2024-01-31"
+  },
+  "features": [
+    "Cloudflare Pages static deploy fix",
+    "Monthly CSV import replace/append",
+    "Login User=BCC Password=BCC@2026",
+    "Machine checkbox multi-select",
+    "IndexedDB storage"
+  ]
+}
