@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OEE Performance Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Required for Excel .xlsx/.xls import. Dashboard still works for CSV if CDN is blocked. -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 </head>
 <body>
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">
-      <img src="assets/logo-bcc.jpg" class="login-logo-img" alt="BCC Logo" />
+      <div class="login-mark">BCC</div>
       <h2>เข้าสู่ระบบ OEE Dashboard</h2>
       <label>User</label>
       <input id="loginUser" placeholder="User" autocomplete="username" />
@@ -23,7 +22,8 @@
   </div>
 
   <header class="topbar">
-    <img src="assets/logo-bcc.jpg" class="top-logo" alt="BCC Logo" />
+    <div class="cable-orbit orbit-a"></div>
+    <div class="cable-orbit orbit-b"></div>
     <div class="top-title">OEE Performance Dashboard</div>
     <button id="logoutBtn" class="logout-btn">Logout</button>
   </header>
@@ -34,7 +34,10 @@
       <div class="machine-picker">
         <button id="machinePickerBtn" class="picker-btn" type="button">All Machines ▾</button>
         <div id="machinePanel" class="machine-panel">
-          <label class="machine-actions"><input type="checkbox" id="machineAllCheck" checked /> Select All Machines</label>
+          <div class="machine-panel-actions">
+            <label class="machine-actions"><input type="checkbox" id="machineAllCheck" checked /> Select All</label>
+            <button id="resetMachinesBtn" class="mini-btn" type="button">Reset Machines</button>
+          </div>
           <div id="machineChecklist" class="machine-list"></div>
         </div>
       </div>
@@ -52,8 +55,12 @@
       <label>From <input id="fromDate" type="date" /></label>
       <label>To <input id="toDate" type="date" /></label>
       <label>Trend <select id="trendFilter"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></label>
+      <div class="year-buttons">
+        <button class="year-btn" data-year="2024">2024</button>
+        <button class="year-btn" data-year="2025">2025</button>
+        <button class="year-btn" data-year="2026">2026</button>
+      </div>
       <button id="resetDate" class="btn blue wide">Reset Date Range</button>
-      <span class="tone-pill">Bangkok Cable CI Tone</span>
     </section>
 
     <div id="fileNote" class="small-note">Loading bundled January 2024 data…</div>

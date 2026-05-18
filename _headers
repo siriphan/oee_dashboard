@@ -6,5 +6,3 @@
 /data/*.csv
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300
-/assets/*
-  Cache-Control: public, max-age=86400

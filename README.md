@@ -1,17 +1,17 @@
-# OEE Performance Dashboard - BCC Final
+# OEE Performance Dashboard - Bangkok Cable Template Update
 
-## สิ่งที่ปรับตามคำขอ
-- ลบข้อความหัวเดิมทั้งหมด
-- ลบ Created By
-- ลบ Cloudflare Fix footnote
-- Header บนสุดใช้พื้นหลัง `KV New Slogan LinkedIn.jpg`
-- ใส่ Logo BCC ซ้ายบน
-- เมนูบนสุดแสดง `OEE Performance Dashboard` ตัวหนา ตรงกลาง สีขาว
-- Font หลัก: `TH Sarabun New`
-- Import ได้ทั้ง `.csv`, `.xlsx`, `.xls`
-- ปรับกราฟแท่งเป็นสี Gradient ให้สวยขึ้น
-- คง Login: User `BCC`, Password `BCC@2026`
-- คง Machine Checkbox Multi-select
+## ปรับปรุงตามคำขอ
+- เพิ่มปุ่ม Reset Machines สำหรับรีเซ็ตการเลือกเครื่องจักร
+- เพิ่มปุ่มแสดงผลปี 2024, 2025, 2026
+- ลบ Logo ออกจาก Dashboard และ Login
+- ปรับสไตล์เป็น Bangkok Cable Template ตาม `Internal_BCC PowerPoint Template 2026.pptx` โดยใช้โทน Dark Blue / Neon Cable / Red Accent
+- ลบข้อความ `Bangkok Cable CI Tone`
+- ปรับข้อความและ UI ให้ใหญ่ขึ้น
+- รองรับ Import `.csv`, `.xlsx`, `.xls`
+
+## Login
+- User: `BCC`
+- Password: `BCC@2026`
 
 ## Cloudflare Pages Settings
 - Framework preset: None
@@ -21,4 +21,4 @@
 - Root directory: `/`
 
 ## หมายเหตุ Excel Import
-Excel import ใช้ SheetJS CDN จากหน้า browser หาก network block CDN ให้ใช้ CSV หรือดาวน์โหลด SheetJS มาใส่ local เพิ่มได้
+Excel import ใช้ SheetJS CDN หาก network block CDN ให้ใช้ CSV หรือเพิ่ม SheetJS local ได้
