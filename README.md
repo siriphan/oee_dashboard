@@ -1,12 +1,11 @@
-# OEE Performance Dashboard - KV Background + OEE Trend Values
+# OEE Performance Dashboard - KV Background Fixed
 
-## ปรับปรุงตามคำขอ
-- เปลี่ยนพื้นหลังเมนูบนสุดให้เป็น `KV New Slogan LinkedIn.jpg`
-- กราฟ `OEE Trend` แสดงตัวเลขเปอร์เซ็นต์ด้านบนของแท่งกราฟ
-- คงสีกราฟแท่ง `Machine Group OEE`, `Bottom Machines by OEE`, `Top Scrap by Machine Group` เป็นสีน้ำเงินเข้ม
-- ปุ่ม `Reset Machines` ลบ Select เครื่องจักรทั้งหมด
-- `All Groups` แสดงกลุ่มจาก Machine 3 หลักแรก
-- รองรับ Import `.csv`, `.xlsx`, `.xls`
+## แก้ไขสำคัญ
+- พื้นหลังเมนูบนสุดเปลี่ยนมาใช้ `<img>` แบบ absolute แทน CSS background เพื่อแก้ปัญหารูปไม่แสดงจาก path/cache
+- เปลี่ยนชื่อไฟล์รูปเป็น `assets/kv.jpg` เพื่อลดปัญหาเว้นวรรคในชื่อไฟล์
+- ใส่ cache busting `?v=20260518` ให้ CSS/JS/Image
+- `_headers` ตั้ง `assets/*` เป็น `Cache-Control: no-cache`
+- OEE Trend แสดงตัวเลขเปอร์เซ็นต์ด้านบนแท่งกราฟ
 
 ## Login
 - User: `BCC`
