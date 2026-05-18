@@ -3,35 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Executive OEE Performance Dashboard</title>
+  <title>OEE Performance Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Required for Excel .xlsx/.xls import. Dashboard still works for CSV if CDN is blocked. -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 </head>
 <body>
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">
-      <div class="login-logo">BCC</div>
-      <h2>Executive OEE Dashboard Login</h2>
-      <p>เข้าสู่ระบบเพื่อใช้งาน Dashboard</p>
+      <img src="assets/logo-bcc.jpg" class="login-logo-img" alt="BCC Logo" />
+      <h2>เข้าสู่ระบบ OEE Dashboard</h2>
       <label>User</label>
       <input id="loginUser" placeholder="User" autocomplete="username" />
       <label>Password</label>
       <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password" />
       <button id="loginBtn" class="btn blue login-btn">Login</button>
       <div id="loginMsg" class="login-msg"></div>
-      <div class="login-hint">Default: User = BCC / Pass = BCC@2026</div>
     </div>
   </div>
 
-  <header class="hero">
-    <div>
-      <h1>Executive OEE Performance Dashboard</h1>
-      <p id="statusText">Ready - Monthly CSV import, Login and Machine checkbox enabled</p>
-      <span class="theme-pill">Bangkok Cable Theme | Blue · Red · White</span>
-    </div>
-    <div class="hero-right">
-      <div class="created-pill">Created By Siriphan Meesombut&nbsp; ID4.0 Teams</div>
-      <button id="logoutBtn" class="logout-btn">Logout</button>
-    </div>
+  <header class="topbar">
+    <img src="assets/logo-bcc.jpg" class="top-logo" alt="BCC Logo" />
+    <div class="top-title">OEE Performance Dashboard</div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
   </header>
 
   <main class="wrap">
@@ -47,7 +41,7 @@
       <select id="shiftFilter"><option value="">All Shifts</option></select>
       <select id="locationFilter"><option value="">All Locations</option></select>
       <select id="operationFilter"><option value="">All Operations</option></select>
-      <input id="fileInput" type="file" accept=".csv,.txt" multiple />
+      <input id="fileInput" type="file" accept=".xlsx,.xls,.csv,.txt" multiple />
       <select id="importMode"><option value="replace">Replace Data</option><option value="append">Append Data</option></select>
       <button id="importBtn" class="btn blue">Import Files</button>
       <button id="saveBtn" class="btn green">Save DB</button>
@@ -74,7 +68,7 @@
     </section>
 
     <section class="grid2">
-      <article class="panel chart-panel"><div class="panel-title">Daily OEE Trend <span id="trendBadge">Daily</span></div><canvas id="trendChart"></canvas></article>
+      <article class="panel chart-panel"><div class="panel-title">OEE Trend <span id="trendBadge">Daily</span></div><canvas id="trendChart"></canvas></article>
       <article class="panel chart-panel"><div class="panel-title">OEE Components</div><canvas id="componentChart"></canvas></article>
     </section>
     <section class="grid2">
@@ -85,13 +79,12 @@
 
     <section class="panel table-panel">
       <div class="panel-title">Production Detail</div>
-      <div class="table-tools"><input id="searchBox" placeholder="Search machine/material/operation…" /></div>
+      <div class="table-tools"><input id="searchBox" placeholder="ค้นหาเครื่องจักร / Material / Operation…" /></div>
       <div class="table-wrap"><table id="detailTable"><thead></thead><tbody></tbody></table></div>
     </section>
 
     <section class="panel footnote">
       <p><b>OEE Formula:</b> Run Time = Total Confirm Time - Machine Down Time; Availability = Run Time / Total Confirm Time; Performance = MIN(Production Time / Run Time, 1); Quality = Output / (Output + Scrap/1000); OEE = Availability × Performance × Quality</p>
-      <p><b>Cloudflare Fix:</b> Static Pages version. Do not use <code>npx wrangler deploy</code>. Build command and Deploy command must be blank.</p>
     </section>
   </main>
   <script src="app.js"></script>

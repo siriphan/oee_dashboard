@@ -1,23 +1,24 @@
-# Executive OEE Performance Dashboard - Cloudflare Pages Static Fix
+# OEE Performance Dashboard - BCC Final
 
-สร้างใหม่สำหรับ Cloudflare Pages แบบ Static โดยไม่มี `package.json`, ไม่มี `wrangler.toml`, และไม่มี standalone `worker.js` เพื่อป้องกัน error `npx wrangler deploy`.
+## สิ่งที่ปรับตามคำขอ
+- ลบข้อความหัวเดิมทั้งหมด
+- ลบ Created By
+- ลบ Cloudflare Fix footnote
+- Header บนสุดใช้พื้นหลัง `KV New Slogan LinkedIn.jpg`
+- ใส่ Logo BCC ซ้ายบน
+- เมนูบนสุดแสดง `OEE Performance Dashboard` ตัวหนา ตรงกลาง สีขาว
+- Font หลัก: `TH Sarabun New`
+- Import ได้ทั้ง `.csv`, `.xlsx`, `.xls`
+- ปรับกราฟแท่งเป็นสี Gradient ให้สวยขึ้น
+- คง Login: User `BCC`, Password `BCC@2026`
+- คง Machine Checkbox Multi-select
 
-## Login
-- User: `BCC`
-- Password: `BCC@2026`
-
-## Features
-- Import CSV รายเดือน: Replace / Append
-- Machine checkbox multi-select
-- IndexedDB storage
-- Dashboard ใช้ข้อมูลเริ่มต้น `data/01_2024.csv`
-- Optional Cloudflare Pages Function: `functions/api/health.js`
-
-## Correct Cloudflare Pages Settings
+## Cloudflare Pages Settings
 - Framework preset: None
 - Build command: เว้นว่าง
 - Deploy command: เว้นว่าง
 - Build output directory: `/`
 - Root directory: `/`
 
-ห้ามใช้ `npx wrangler deploy` สำหรับโปรเจกต์ Pages นี้
+## หมายเหตุ Excel Import
+Excel import ใช้ SheetJS CDN จากหน้า browser หาก network block CDN ให้ใช้ CSV หรือดาวน์โหลด SheetJS มาใส่ local เพิ่มได้
